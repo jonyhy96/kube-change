@@ -16,11 +16,7 @@ var (
 func init() {
 	rootCmd.Flags().StringP("root", "r", os.Getenv("KUBEROOT"), "the locate of your config root e.g. ~/.kube")
 	rootCmd.Flags().StringP("context", "c", "", "the location of your context file (if context is not a abs location it will use root as parent dir)")
-	err := rootCmd.MarkFlagRequired("root")
-	if err != nil {
-		panic(err)
-	}
-	err = rootCmd.MarkFlagRequired("context")
+	err := rootCmd.MarkFlagRequired("context")
 	if err != nil {
 		panic(err)
 	}
